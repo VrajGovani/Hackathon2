@@ -1,0 +1,221 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Train Booking</title>
+    <link rel="stylesheet" href="styles.css">
+
+</head>
+
+<body>
+    <div class="container">
+        <h1 class="my">Train Booking</h1>
+    </div>
+    <main class="s">
+        <section id="search">
+            <div class="container">
+                <h2>Find Your Train</h2>
+                <form id="searchForm">
+                    <div class="form-group">
+                        <label for="origin">Origin:</label>
+                        <input type="text" id="origin" placeholder="Enter origin city" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="destination">Destination:</label>
+                        <input type="text" id="destination" placeholder="Enter destination city" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="departureDate">Departure Date:</label>
+                        <input type="date" id="departureDate" required>
+                    </div>
+                    <button type="submit" class="idea">Search Trains</button>
+                </form>
+            </div>
+        </section>
+        <section id="results" style="display:none;">
+            <div class="container">
+                <h2>Search Results</h2>
+                <div id="trainList" class="grid-container">
+                    <!-- Results will be displayed here -->
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <p class="m">&copy; 2024 Train Booking. All rights reserved.</p>
+
+
+    <script src="script.js"></script>
+</body>
+
+
+
+<style>
+    /* Reset CSS */
+    * {
+        box-sizing: border-box;
+        margin: 0;
+        padding: 0;
+    }
+
+    body {
+        font-family: Arial, sans-serif;
+        background-color: #f8f8f8;
+        background-image: url('train.jpg');
+
+        background-size: 100%;
+        margin: 15;
+        padding: 34;
+    }
+
+    .idea {
+        opacity: 2.0;
+        background-color: #2f2e2e;
+    }
+
+    .my {
+        font-size: 60px;
+        color: rgb(240, 232, 232);
+        text-align: center;
+        margin: 40px;
+    }
+
+    .m {
+        text-align: center;
+        font-size: 15 px;
+        color: white;
+    }
+
+    .container {
+        width: 80%;
+        margin: 0 auto;
+        opacity: 1.0;
+    }
+
+    header {
+        background-color: #777;
+        /* Dark green */
+        color: #fff;
+        padding: 20px 0;
+    }
+
+    header h1 {
+        text-align: center;
+    }
+
+    main {
+        padding: 20px 0;
+        /* Background image */
+        background-size: cover;
+        background-position: center;
+    }
+
+    section#search {
+        background-color: rgba(255, 255, 255, 0.9);
+        /* Semi-transparent white background */
+        padding: 20px;
+        border-radius: 5px;
+        box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.1);
+    }
+
+    form {
+        display: flex;
+        flex-wrap: wrap;
+    }
+
+    .form-group {
+        flex: 0 0 33.33%;
+        margin-bottom: 20px;
+    }
+
+    .form-group label {
+        display: block;
+        margin-bottom: 5px;
+    }
+
+    input[type="text"],
+    input[type="date"],
+    button {
+        width: 100%;
+        padding: 10px;
+        border: 1px solid #ccc;
+        border-radius: 5px;
+    }
+
+    button {
+        background-color: #777;
+        /* Teal */
+        color: #fff;
+        border: none;
+        cursor: pointer;
+    }
+
+    button:hover {
+        background-color: #777;
+        /* Darker teal */
+    }
+
+    section#results {
+        margin-top: 20px;
+    }
+
+    .grid-container {
+        display: grid;
+        grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+        grid-gap: 20px;
+    }
+
+    .train {
+        background-color: #868080;
+        border-radius: 5px;
+        padding: 20px;
+        box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.1);
+    }
+
+    footer {
+        background-color: #4b4646;
+        /* Dark green */
+        color: #fff;
+        padding: 20px 0;
+        text-align: center;
+    }
+</style>
+<script>
+    document.getElementById('searchForm').addEventListener('submit', function (event) {
+        event.preventDefault();
+
+        const origin = document.getElementById('origin').value;
+        const destination = document.getElementById('destination').value;
+        const departureDate = document.getElementById('departureDate').value;
+
+        // Here you can add logic to fetch train data from an API or a database
+        // For demonstration purposes, let's log the search parameters
+        console.log("Origin:", origin);
+        console.log("Destination:", destination);
+        console.log("Departure Date:", departureDate);
+
+        // For now, let's assume we have some dummy data to display
+        const dummyData = [
+            { id: 1, name: 'Express Train', departure: '08:00', arrival: '12:00', price: '$50' },
+            { id: 2, name: 'Local Train', departure: '09:00', arrival: '13:00', price: '$30' },
+            { id: 3, name: 'High-Speed Train', departure: '10:00', arrival: '14:00', price: '$80' }
+        ];
+
+        displayTrains(dummyData);
+    });
+
+    function displayTrains(trains) {
+        const trainList = document.getElementById('trainList');
+        trainList.innerHTML = '';
+
+        trains.forEach(train => {
+            const trainElement = document.createElement('div');
+            trainElement.classList.add('train');
+            trainElement.innerHTML = `
+        <h3>${train.name}</h3>
+        <p><strong>Departure:</strong> ${train.departure}</p>
+</script>
+
+</html>

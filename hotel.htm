@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="styles.css">
+    <title>Hotel Booking</title>
+</head>
+<style>
+    body {
+        background-image: url(hotel.jpg);
+        position: absolute;
+        top: 0%;
+        left: 0;
+        height: 12  00px;
+        width: 1510px;
+        opacity: 0.7;
+        background-size: 500mm;
+        font-family: 'Arial', sans-serif;
+        margin: 0;
+        padding: 0;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        min-height: 100vh;
+        background-color: #f4f4f4;
+    }
+    .yt{
+        color: #f4f4f4;
+    }
+    .booking-form {
+        width: 500px;
+        background-color: #070507;
+        padding: 20px;
+        border-radius: 20px;
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    }
+
+    h2 {
+        text-align: center;
+        font-size: 30px;
+    }
+
+    form {
+padding: 4%;
+        display: flex;
+        flex-direction: column;
+    }
+
+    label {
+        margin-bottom: 8px;
+    }
+
+    input {
+        padding: 8px;
+        margin-bottom: 16px;
+        border: 1px solid #ccc;
+        border-radius: 10px;
+    }
+
+    button {
+        width: 200px;
+        display: block;
+        margin-left: 125px;
+        background-color: #007BFF;
+        color: #fff;
+        padding: 10px;
+        border: none;
+        border-radius: 4px;
+        cursor: pointer;
+    }
+    button a{
+        text-decoration: none;
+        color:  white;
+    }
+
+    button:hover {
+        background-color: #0056b3;
+    }
+    .city{
+        color: #f4f4f4;
+    }
+
+    
+</style>
+
+<body>
+    
+    <div class="booking-form">
+        <h2 class="yt">Hotel Booking</h2>
+        <form action="booking_process.php" method="post">
+            <label for="city" class="city">City:</label>
+            <input type="text" id="city" name="city" required>
+
+            <label for="check-in" class="city">Check-In:</label>
+            <input type="date" id="checkin" name="check-in" required>
+
+            <label for="check-out" class="city">Check-Out:</label>
+            <input type="date" id="checkout" name="check-out" required>
+
+            <label for="adults" class="city">Adults:</label>
+            <input type="number" id="adults" name="adults" min="1" required>
+
+            <label for="children" class="city">Children:</label>
+            <input type="number" id="children" name="children" min="0" required>
+
+
+            <button type="submit" class="bu">Book Now</button>&nbsp;
+            <button type="submit"><a href="ttt.htm">Back</a></button>
+        </form>
+    </div>
+</body>
+
+</html>
